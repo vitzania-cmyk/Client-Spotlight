@@ -438,9 +438,9 @@
 
 <!-- HERO -->
 <header class="hero">
-  <p class="hero-eyebrow">TalentPop · HubSpot Export through June 2, 2026</p>
+  <p class="hero-eyebrow">TalentPop · Influencer Marketing Specialist (IMS) · May 2026</p>
   <h1>Client Spotlight<br>Mention Report</h1>
-  <p class="hero-sub">How often are CSMs mentioning the Client Spotlight to their clients on calls?</p>
+  <p class="hero-sub">How often are IMS CSMs mentioning the Client Spotlight to their clients on calls? Data covers May 2026 calls, exported from HubSpot on June 2, 2026.</p>
 
   <div class="metrics-row" id="metricsRow">
     <div class="metric-card">
@@ -476,7 +476,7 @@
     <div class="podium-card second" data-delay="200">
       <span class="podium-medal">🥈</span>
       <div class="podium-name">Tia Silver</div>
-      <div class="podium-pod">Kalina's Pod</div>
+      <div class="podium-pod">RocketPops</div>
       <div class="podium-rate">45%</div>
       <div class="podium-rate-label">Mention Rate</div>
       <div class="podium-calls">5 yes · 30 calls</div>
@@ -486,7 +486,7 @@
       <div class="podium-glow"></div>
       <span class="podium-medal">🥇</span>
       <div class="podium-name">Sadie Brown</div>
-      <div class="podium-pod">Vitzania's Pod</div>
+      <div class="podium-pod">PopTarts</div>
       <div class="podium-rate">50%</div>
       <div class="podium-rate-label">Mention Rate</div>
       <div class="podium-calls">6 yes · 16 calls</div>
@@ -495,7 +495,7 @@
     <div class="podium-card third" data-delay="400">
       <span class="podium-medal">🥉</span>
       <div class="podium-name">Clinton Greenaway</div>
-      <div class="podium-pod">Vitzania's Pod</div>
+      <div class="podium-pod">PopTarts</div>
       <div class="podium-rate">32%</div>
       <div class="podium-rate-label">Mention Rate</div>
       <div class="podium-calls">7 yes · 44 calls</div>
@@ -514,7 +514,7 @@
     <div class="pod-card" data-delay="0">
       <div class="pod-title">
         <span class="pod-dot" style="background: var(--vitzania)"></span>
-        Vitzania's Pod
+        🍓 PopTarts
       </div>
       <div class="pod-big-rate" style="color: var(--vitzania)">27%</div>
       <div class="pod-stats">
@@ -527,7 +527,7 @@
     <div class="pod-card" data-delay="100">
       <div class="pod-title">
         <span class="pod-dot" style="background: var(--andrea)"></span>
-        Andrea's Pod
+        🍭 LoliPops
       </div>
       <div class="pod-big-rate" style="color: var(--andrea)">13%</div>
       <div class="pod-stats">
@@ -540,7 +540,7 @@
     <div class="pod-card" data-delay="200">
       <div class="pod-title">
         <span class="pod-dot" style="background: var(--kalina)"></span>
-        Kalina's Pod
+        🚀 RocketPops
       </div>
       <div class="pod-big-rate" style="color: var(--kalina)">10%</div>
       <div class="pod-stats">
@@ -564,9 +564,9 @@
 
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterTable('all', this)">All Pods</button>
-    <button class="filter-btn" onclick="filterTable('vitzania', this)">Vitzania's Pod</button>
-    <button class="filter-btn" onclick="filterTable('kalina', this)">Kalina's Pod</button>
-    <button class="filter-btn" onclick="filterTable('andrea', this)">Andrea's Pod</button>
+    <button class="filter-btn" onclick="filterTable('vitzania', this)">🍓 PopTarts</button>
+    <button class="filter-btn" onclick="filterTable('andrea', this)">🍭 LoliPops</button>
+    <button class="filter-btn" onclick="filterTable('kalina', this)">🚀 RocketPops</button>
   </div>
 
   <table class="csm-table" id="csmTable">
@@ -589,37 +589,37 @@
 </section>
 
 <footer>
-  Client Spotlight Mention Report &nbsp;·&nbsp; 889 records &nbsp;·&nbsp; HubSpot Export through June 2, 2026 &nbsp;·&nbsp; Generated June 5, 2026
+  Client Spotlight Mention Report &nbsp;·&nbsp; Influencer Marketing Specialist (IMS) &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; HubSpot Export through June 2, 2026
 </footer>
 
 <script>
 const CSM_DATA = [
   // name, pod, calls, yes, no, noval, rate (yes/(yes+no)), podClass
-  { name: "Sadie Brown", pod: "Vitzania's Pod", podClass: "vitzania", calls: 16, yes: 6, no: 6, noval: 4, rate: 50 },
-  { name: "Usman Siddique", pod: "Andrea's Pod", podClass: "andrea", calls: 17, yes: 1, no: 1, noval: 15, rate: 50 },
-  { name: "Tia Silver", pod: "Kalina's Pod", podClass: "kalina", calls: 30, yes: 5, no: 6, noval: 19, rate: 45 },
-  { name: "Asande Mkari", pod: "Andrea's Pod", podClass: "andrea", calls: 47, yes: 2, no: 5, noval: 40, rate: 29 },
-  { name: "Vitzania Estrada", pod: "Vitzania's Pod", podClass: "vitzania", calls: 11, yes: 3, no: 2, noval: 6, rate: 60, isManager: true },
-  { name: "Andrea Asistido", pod: "Andrea's Pod", podClass: "andrea", calls: 6, yes: 2, no: 0, noval: 4, rate: 100, isManager: true },
-  { name: "Clinton Greenaway", pod: "Vitzania's Pod", podClass: "vitzania", calls: 44, yes: 7, no: 15, noval: 22, rate: 32 },
-  { name: "Aedan Walch Flores", pod: "Vitzania's Pod", podClass: "vitzania", calls: 43, yes: 3, no: 11, noval: 29, rate: 21 },
-  { name: "Octavio Lobato", pod: "Vitzania's Pod", podClass: "vitzania", calls: 53, yes: 4, no: 16, noval: 33, rate: 20 },
-  { name: "Ashley Palmer", pod: "Vitzania's Pod", podClass: "vitzania", calls: 29, yes: 3, no: 14, noval: 12, rate: 18 },
-  { name: "Madison LeBlanc", pod: "Vitzania's Pod", podClass: "vitzania", calls: 43, yes: 3, no: 13, noval: 27, rate: 19 },
-  { name: "Jhon Paulo Talato", pod: "Andrea's Pod", podClass: "andrea", calls: 46, yes: 1, no: 5, noval: 40, rate: 17 },
-  { name: "Mikka Robelle Claveria T.", pod: "Andrea's Pod", podClass: "andrea", calls: 47, yes: 1, no: 6, noval: 40, rate: 14 },
-  { name: "Pam Brown", pod: "Vitzania's Pod", podClass: "vitzania", calls: 40, yes: 2, no: 6, noval: 32, rate: 25 },
-  { name: "Troy Abram", pod: "Kalina's Pod", podClass: "kalina", calls: 26, yes: 1, no: 10, noval: 15, rate: 9 },
-  { name: "David Noller", pod: "Kalina's Pod", podClass: "kalina", calls: 25, yes: 1, no: 11, noval: 13, rate: 8 },
-  { name: "Ezekiel Grado", pod: "Kalina's Pod", podClass: "kalina", calls: 51, yes: 1, no: 13, noval: 37, rate: 7 },
-  { name: "Daniel Colohan", pod: "Kalina's Pod", podClass: "kalina", calls: 58, yes: 1, no: 21, noval: 36, rate: 5 },
-  { name: "Kalina Velikova", pod: "Kalina's Pod", podClass: "kalina", calls: 10, yes: 0, no: 4, noval: 6, rate: 0, isManager: true },
-  { name: "Jack Wasserman", pod: "Kalina's Pod", podClass: "kalina", calls: 38, yes: 0, no: 14, noval: 24, rate: 0 },
-  { name: "Shelby Bruce", pod: "Kalina's Pod", podClass: "kalina", calls: 23, yes: 0, no: 9, noval: 14, rate: 0 },
-  { name: "Nelly Wema", pod: "Andrea's Pod", podClass: "andrea", calls: 57, yes: 0, no: 7, noval: 50, rate: 0 },
-  { name: "Md Shaidul Islam Shakil", pod: "Andrea's Pod", podClass: "andrea", calls: 59, yes: 0, no: 13, noval: 46, rate: 0 },
-  { name: "Ceazar Camales", pod: "Andrea's Pod", podClass: "andrea", calls: 51, yes: 0, no: 7, noval: 44, rate: 0 },
-  { name: "Shongile Carol Manganyi", pod: "Andrea's Pod", podClass: "andrea", calls: 10, yes: 0, no: 3, noval: 7, rate: 0 },
+  { name: "Sadie Brown", pod: "PopTarts", podClass: "vitzania", calls: 16, yes: 6, no: 6, noval: 4, rate: 50 },
+  { name: "Usman Siddique", pod: "LoliPops", podClass: "andrea", calls: 17, yes: 1, no: 1, noval: 15, rate: 50 },
+  { name: "Tia Silver", pod: "RocketPops", podClass: "kalina", calls: 30, yes: 5, no: 6, noval: 19, rate: 45 },
+  { name: "Asande Mkari", pod: "LoliPops", podClass: "andrea", calls: 47, yes: 2, no: 5, noval: 40, rate: 29 },
+  { name: "Vitzania Estrada", pod: "PopTarts", podClass: "vitzania", calls: 11, yes: 3, no: 2, noval: 6, rate: 60, isManager: true },
+  { name: "Andrea Asistido", pod: "LoliPops", podClass: "andrea", calls: 6, yes: 2, no: 0, noval: 4, rate: 100, isManager: true },
+  { name: "Clinton Greenaway", pod: "PopTarts", podClass: "vitzania", calls: 44, yes: 7, no: 15, noval: 22, rate: 32 },
+  { name: "Aedan Walch Flores", pod: "PopTarts", podClass: "vitzania", calls: 43, yes: 3, no: 11, noval: 29, rate: 21 },
+  { name: "Octavio Lobato", pod: "PopTarts", podClass: "vitzania", calls: 53, yes: 4, no: 16, noval: 33, rate: 20 },
+  { name: "Ashley Palmer", pod: "PopTarts", podClass: "vitzania", calls: 29, yes: 3, no: 14, noval: 12, rate: 18 },
+  { name: "Madison LeBlanc", pod: "PopTarts", podClass: "vitzania", calls: 43, yes: 3, no: 13, noval: 27, rate: 19 },
+  { name: "Jhon Paulo Talato", pod: "LoliPops", podClass: "andrea", calls: 46, yes: 1, no: 5, noval: 40, rate: 17 },
+  { name: "Mikka Robelle Claveria T.", pod: "LoliPops", podClass: "andrea", calls: 47, yes: 1, no: 6, noval: 40, rate: 14 },
+  { name: "Pam Brown", pod: "PopTarts", podClass: "vitzania", calls: 40, yes: 2, no: 6, noval: 32, rate: 25 },
+  { name: "Troy Abram", pod: "RocketPops", podClass: "kalina", calls: 26, yes: 1, no: 10, noval: 15, rate: 9 },
+  { name: "David Noller", pod: "RocketPops", podClass: "kalina", calls: 25, yes: 1, no: 11, noval: 13, rate: 8 },
+  { name: "Ezekiel Grado", pod: "RocketPops", podClass: "kalina", calls: 51, yes: 1, no: 13, noval: 37, rate: 7 },
+  { name: "Daniel Colohan", pod: "RocketPops", podClass: "kalina", calls: 58, yes: 1, no: 21, noval: 36, rate: 5 },
+  { name: "Kalina Velikova", pod: "RocketPops", podClass: "kalina", calls: 10, yes: 0, no: 4, noval: 6, rate: 0, isManager: true },
+  { name: "Jack Wasserman", pod: "RocketPops", podClass: "kalina", calls: 38, yes: 0, no: 14, noval: 24, rate: 0 },
+  { name: "Shelby Bruce", pod: "RocketPops", podClass: "kalina", calls: 23, yes: 0, no: 9, noval: 14, rate: 0 },
+  { name: "Nelly Wema", pod: "LoliPops", podClass: "andrea", calls: 57, yes: 0, no: 7, noval: 50, rate: 0 },
+  { name: "Md Shaidul Islam Shakil", pod: "LoliPops", podClass: "andrea", calls: 59, yes: 0, no: 13, noval: 46, rate: 0 },
+  { name: "Ceazar Camales", pod: "LoliPops", podClass: "andrea", calls: 51, yes: 0, no: 7, noval: 44, rate: 0 },
+  { name: "Shongile Carol Manganyi", pod: "LoliPops", podClass: "andrea", calls: 10, yes: 0, no: 3, noval: 7, rate: 0 },
 ];
 
 // Sort: managers separate (shown inline), then by rate desc
