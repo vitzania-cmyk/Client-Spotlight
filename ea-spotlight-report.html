@@ -26,7 +26,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
 
-  /* HERO */
   .hero {
     background: linear-gradient(135deg, #1A1A2E 0%, #2E3250 60%, #3D2B6B 100%);
     color: white; text-align: center; padding: 64px 24px 80px;
@@ -37,45 +36,23 @@
     background: radial-gradient(ellipse at 30% 50%, rgba(255,107,157,0.15) 0%, transparent 60%),
                 radial-gradient(ellipse at 70% 30%, rgba(91,141,239,0.15) 0%, transparent 60%);
   }
-  .hero-eyebrow {
-    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-    color: rgba(255,255,255,0.6); margin-bottom: 16px; position: relative;
-  }
+  .hero-eyebrow { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; position: relative; }
   .hero h1 { font-size: clamp(32px, 6vw, 56px); font-weight: 800; line-height: 1.1; position: relative; margin-bottom: 12px; }
   .hero h1 span { color: #FF6B9D; }
   .hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto; position: relative; }
 
-  /* STATS BAR */
-  .stats-bar {
-    display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
-    background: var(--mid); padding: 0;
-  }
-  .stat-item {
-    flex: 1; min-width: 140px; text-align: center;
-    padding: 22px 16px; border-right: 1px solid rgba(255,255,255,0.08);
-    animation: fadeUp 0.5s ease both;
-  }
+  .stats-bar { display: flex; justify-content: center; gap: 0; flex-wrap: wrap; background: var(--mid); padding: 0; }
+  .stat-item { flex: 1; min-width: 140px; text-align: center; padding: 22px 16px; border-right: 1px solid rgba(255,255,255,0.08); animation: fadeUp 0.5s ease both; }
   .stat-item:last-child { border-right: none; }
   .stat-num { font-size: 32px; font-weight: 800; color: white; line-height: 1; }
   .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
-  /* SECTION */
   .section { max-width: 1100px; margin: 0 auto; padding: 48px 24px 0; }
-  .section-title {
-    font-size: 22px; font-weight: 700; color: var(--dark);
-    margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
-  }
-  .section-title::after {
-    content: ''; flex: 1; height: 2px;
-    background: linear-gradient(to right, rgba(0,0,0,0.08), transparent);
-  }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(to right, rgba(0,0,0,0.08), transparent); }
 
-  /* PODIUM */
   .podium-wrap { display: flex; justify-content: center; align-items: flex-end; gap: 16px; padding: 24px 0 40px; flex-wrap: wrap; }
-  .podium-card {
-    text-align: center; border-radius: var(--radius); overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12); animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
+  .podium-card { text-align: center; border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
   .podium-card.p1 { width: 220px; animation-delay: 0.2s; }
   .podium-card.p2 { width: 190px; animation-delay: 0.1s; }
   .podium-card.p3 { width: 180px; animation-delay: 0.3s; }
@@ -94,13 +71,8 @@
   .p2 .podium-rate { color: var(--silver); }
   .p3 .podium-rate { color: var(--bronze); }
 
-  /* POD CARDS */
   .pod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 48px; }
-  .pod-card {
-    background: var(--card); border-radius: var(--radius);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden;
-    animation: fadeUp 0.5s ease both;
-  }
+  .pod-card { background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; animation: fadeUp 0.5s ease both; }
   .pod-header { padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; }
   .pod-header-left { display: flex; align-items: center; gap: 10px; }
   .pod-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
@@ -114,44 +86,25 @@
   .pod-meta-item { font-size: 13px; color: var(--subtext); }
   .pod-meta-item strong { color: var(--text); font-weight: 600; }
 
-  /* TABLE */
   .table-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
-  .filter-btn {
-    padding: 7px 16px; border-radius: 99px; border: 2px solid transparent;
-    font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; background: #eee; color: var(--subtext);
-  }
-  .filter-btn.active, .filter-btn:hover { color: white; }
-  .filter-btn[data-pod="all"].active { background: var(--dark); border-color: var(--dark); }
+  .filter-btn { padding: 7px 16px; border-radius: 99px; border: 2px solid transparent; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; background: #eee; color: var(--subtext); }
+  .filter-btn[data-pod="all"].active { background: var(--dark); border-color: var(--dark); color: white; }
   .filter-btn[data-pod="PopTarts 🍭"].active { background: var(--poptarts); border-color: var(--poptarts); color: white; }
   .filter-btn[data-pod="RocketPops 🚀"].active { background: var(--rocketpops); border-color: var(--rocketpops); color: white; }
   .filter-btn[data-pod="LoliPops 🍡"].active { background: var(--lolipops); border-color: var(--lolipops); color: white; }
 
   .table-wrap { background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; margin-bottom: 64px; }
   table { width: 100%; border-collapse: collapse; }
-  thead th {
-    background: var(--dark); color: rgba(255,255,255,0.8);
-    padding: 14px 16px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: left;
-  }
+  thead th { background: var(--dark); color: rgba(255,255,255,0.8); padding: 14px 16px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: left; }
   tbody tr { border-bottom: 1px solid #F0F0F0; transition: background 0.15s; animation: fadeUp 0.4s ease both; }
   tbody tr:hover { background: #FAFAFA; }
-  tbody tr.hidden { display: none; }
   td { padding: 13px 16px; font-size: 14px; vertical-align: middle; }
   .csm-name { font-weight: 600; color: var(--dark); }
-  .pod-tag {
-    display: inline-block; padding: 3px 10px; border-radius: 99px;
-    font-size: 11px; font-weight: 600; color: white;
-  }
-  .bar-cell { min-width: 160px; }
+  .pod-tag { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; color: white; }
   .bar-outer { background: #eee; border-radius: 99px; height: 8px; overflow: hidden; }
   .bar-inner { height: 100%; border-radius: 99px; width: 0; transition: width 1s cubic-bezier(0.4,0,0.2,1); }
   .rate-pct { font-weight: 700; font-size: 15px; }
-  .unlogged-badge {
-    display: inline-block; background: #FFF3E0; color: #E65100;
-    border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: 600;
-  }
-
-  /* FOOTER */
-  .footer { background: var(--mid); color: rgba(255,255,255,0.4); text-align: center; padding: 28px; font-size: 13px; }
+  .unlogged-badge { display: inline-block; background: #FFF3E0; color: #E65100; border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
 
   /* MANAGER COMPARISON */
   .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -170,85 +123,64 @@
   .compare-delta.up { background: #E8F5E9; color: #2E7D32; }
   .compare-delta.neutral { background: #F3F4F6; color: #555; }
 
-  /* ANIMATIONS */
+  .footer { background: var(--mid); color: rgba(255,255,255,0.4); text-align: center; padding: 28px; font-size: 13px; }
+
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
-  <p class="hero-eyebrow">TalentPop · Executive Assistant (EA) · June 6–24, 2026</p>
+  <p class="hero-eyebrow">TalentPop · Executive Assistant (EA) · June 6 – July 6, 2026</p>
   <h1>Client Spotlight<br><span>Mention Report</span></h1>
   <p class="hero-sub">How often are CSMs mentioning the Client Spotlight to their clients on check-in calls?</p>
 </div>
 
-<!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item" style="animation-delay:0.0s">
-    <div class="stat-num">10%</div>
-    <div class="stat-label">Team Mention Rate</div>
-  </div>
-  <div class="stat-item" style="animation-delay:0.1s">
-    <div class="stat-num">27</div>
-    <div class="stat-label">Total Mentions</div>
-  </div>
-  <div class="stat-item" style="animation-delay:0.2s">
-    <div class="stat-num">263</div>
-    <div class="stat-label">Eligible Calls</div>
-  </div>
-  <div class="stat-item" style="animation-delay:0.3s">
-    <div class="stat-num">88</div>
-    <div class="stat-label">Unlogged (No Value)</div>
-  </div>
-  <div class="stat-item" style="animation-delay:0.4s">
-    <div class="stat-num">22</div>
-    <div class="stat-label">CSMs Tracked</div>
-  </div>
+  <div class="stat-item" style="animation-delay:0.0s"><div class="stat-num">13%</div><div class="stat-label">Team Mention Rate</div></div>
+  <div class="stat-item" style="animation-delay:0.1s"><div class="stat-num">44</div><div class="stat-label">Total Mentions</div></div>
+  <div class="stat-item" style="animation-delay:0.2s"><div class="stat-num">331</div><div class="stat-label">Eligible Calls</div></div>
+  <div class="stat-item" style="animation-delay:0.3s"><div class="stat-num">42</div><div class="stat-label">Unlogged (No Value)</div></div>
+  <div class="stat-item" style="animation-delay:0.4s"><div class="stat-num">22</div><div class="stat-label">CSMs Tracked</div></div>
 </div>
 
-<!-- PODIUM -->
 <div class="section">
   <div class="section-title">🏆 Top Performers</div>
   <div class="podium-wrap">
-    <!-- 2nd -->
     <div class="podium-card p2">
       <div class="podium-top">
         <span class="podium-medal">🥈</span>
-        <div class="podium-name">Jhon Paulo Talato</div>
+        <div class="podium-name">Usman Siddique</div>
         <div class="podium-pod" style="color:var(--lolipops)">LoliPops 🍡</div>
-        <div class="podium-rate">33<small>%</small></div>
-        <div class="podium-calls">1 mention / 3 calls</div>
+        <div class="podium-rate">43<small>%</small></div>
+        <div class="podium-calls">3 mentions / 7 calls</div>
       </div>
       <div class="podium-base">2ND PLACE</div>
     </div>
-    <!-- 1st -->
     <div class="podium-card p1">
       <div class="podium-top">
         <span class="podium-medal">🥇</span>
         <div class="podium-name">Sadie Brown</div>
         <div class="podium-pod" style="color:var(--poptarts)">PopTarts 🍭</div>
-        <div class="podium-rate">44<small>%</small></div>
-        <div class="podium-calls">4 mentions / 9 calls</div>
+        <div class="podium-rate">67<small>%</small></div>
+        <div class="podium-calls">6 mentions / 9 calls</div>
       </div>
       <div class="podium-base">1ST PLACE</div>
     </div>
-    <!-- 3rd -->
     <div class="podium-card p3">
       <div class="podium-top">
         <span class="podium-medal">🥉</span>
-        <div class="podium-name">Asande Mkari</div>
+        <div class="podium-name">Nelly Wema</div>
         <div class="podium-pod" style="color:var(--lolipops)">LoliPops 🍡</div>
-        <div class="podium-rate">29<small>%</small></div>
-        <div class="podium-calls">2 mentions / 7 calls</div>
+        <div class="podium-rate">36<small>%</small></div>
+        <div class="podium-calls">4 mentions / 11 calls</div>
       </div>
       <div class="podium-base">3RD PLACE</div>
     </div>
   </div>
 </div>
 
-<!-- POD BREAKDOWN -->
 <div class="section">
   <div class="section-title">📊 Pod Breakdown</div>
   <div class="pod-grid">
@@ -256,19 +188,16 @@
       <div class="pod-header" style="background: var(--poptarts)">
         <div class="pod-header-left">
           <div class="pod-dot" style="background:white"></div>
-          <div>
-            <div class="pod-name">PopTarts 🍭</div>
-            <div class="pod-manager">Vitzania Estrada</div>
-          </div>
+          <div><div class="pod-name">PopTarts 🍭</div><div class="pod-manager">Vitzania Estrada</div></div>
         </div>
-        <div class="pod-rate-badge">14%</div>
+        <div class="pod-rate-badge">12%</div>
       </div>
       <div class="pod-body">
-        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--poptarts)" data-width="14"></div></div>
+        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--poptarts)" data-width="12"></div></div>
         <div class="pod-meta">
-          <div class="pod-meta-item"><strong>13</strong> mentions</div>
-          <div class="pod-meta-item"><strong>96</strong> eligible calls</div>
-          <div class="pod-meta-item"><strong>29</strong> unlogged</div>
+          <div class="pod-meta-item"><strong>14</strong> mentions</div>
+          <div class="pod-meta-item"><strong>113</strong> eligible calls</div>
+          <div class="pod-meta-item"><strong>13</strong> unlogged</div>
         </div>
       </div>
     </div>
@@ -276,19 +205,16 @@
       <div class="pod-header" style="background: var(--rocketpops)">
         <div class="pod-header-left">
           <div class="pod-dot" style="background:white"></div>
-          <div>
-            <div class="pod-name">RocketPops 🚀</div>
-            <div class="pod-manager">Kalina Velikova</div>
-          </div>
+          <div><div class="pod-name">RocketPops 🚀</div><div class="pod-manager">Kalina Velikova</div></div>
         </div>
-        <div class="pod-rate-badge">9%</div>
+        <div class="pod-rate-badge">13%</div>
       </div>
       <div class="pod-body">
-        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--rocketpops)" data-width="9"></div></div>
+        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--rocketpops)" data-width="13"></div></div>
         <div class="pod-meta">
-          <div class="pod-meta-item"><strong>8</strong> mentions</div>
-          <div class="pod-meta-item"><strong>93</strong> eligible calls</div>
-          <div class="pod-meta-item"><strong>26</strong> unlogged</div>
+          <div class="pod-meta-item"><strong>15</strong> mentions</div>
+          <div class="pod-meta-item"><strong>115</strong> eligible calls</div>
+          <div class="pod-meta-item"><strong>11</strong> unlogged</div>
         </div>
       </div>
     </div>
@@ -296,26 +222,22 @@
       <div class="pod-header" style="background: var(--lolipops)">
         <div class="pod-header-left">
           <div class="pod-dot" style="background:white"></div>
-          <div>
-            <div class="pod-name">LoliPops 🍡</div>
-            <div class="pod-manager">Andrea Asistido</div>
-          </div>
+          <div><div class="pod-name">LoliPops 🍡</div><div class="pod-manager">Andrea Asistido</div></div>
         </div>
-        <div class="pod-rate-badge">8%</div>
+        <div class="pod-rate-badge">15%</div>
       </div>
       <div class="pod-body">
-        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--lolipops)" data-width="8"></div></div>
+        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--lolipops)" data-width="15"></div></div>
         <div class="pod-meta">
-          <div class="pod-meta-item"><strong>6</strong> mentions</div>
-          <div class="pod-meta-item"><strong>73</strong> eligible calls</div>
-          <div class="pod-meta-item"><strong>33</strong> unlogged</div>
+          <div class="pod-meta-item"><strong>15</strong> mentions</div>
+          <div class="pod-meta-item"><strong>103</strong> eligible calls</div>
+          <div class="pod-meta-item"><strong>18</strong> unlogged</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FULL TABLE -->
 <div class="section">
   <div class="section-title">📋 Full CSM Breakdown</div>
   <div class="table-controls">
@@ -328,12 +250,7 @@
     <table>
       <thead>
         <tr>
-          <th>CSM</th>
-          <th>Pod</th>
-          <th>Mentions</th>
-          <th>Eligible Calls</th>
-          <th>Mention Rate</th>
-          <th>Unlogged</th>
+          <th>CSM</th><th>Pod</th><th>Mentions</th><th>Eligible Calls</th><th>Mention Rate</th><th>Unlogged</th>
         </tr>
       </thead>
       <tbody id="csm-tbody"></tbody>
@@ -341,14 +258,10 @@
   </div>
 </div>
 
-<!-- MANAGER COMPARISON -->
 <div class="section" style="padding-bottom:64px">
   <div class="section-title">📈 Manager Comparison — IMS (May) vs. EA (June)</div>
-  <p style="color:var(--subtext);font-size:14px;margin-bottom:28px;max-width:620px">Pod-level mention rates across both spotlight cycles. May reflects the full month; June covers June 6–24 only and is still in progress.</p>
-
+  <p style="color:var(--subtext);font-size:14px;margin-bottom:28px;max-width:620px">Pod-level mention rates across both spotlight cycles. May reflects the full month; June covers June 6 – July 6.</p>
   <div class="compare-grid">
-
-    <!-- Vitzania -->
     <div class="compare-card">
       <div class="compare-header" style="background:var(--poptarts)">
         <div class="compare-manager">Vitzania Estrada</div>
@@ -357,23 +270,17 @@
       <div class="compare-body">
         <div class="compare-row">
           <div class="compare-label">IMS · May</div>
-          <div class="compare-bar-wrap">
-            <div class="compare-bar" style="background:var(--poptarts);opacity:0.45" data-width="27"></div>
-          </div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--poptarts);opacity:0.4" data-width="27"></div></div>
           <div class="compare-pct" style="color:var(--poptarts)">27%</div>
         </div>
         <div class="compare-row">
           <div class="compare-label">EA · June</div>
-          <div class="compare-bar-wrap">
-            <div class="compare-bar" style="background:var(--poptarts)" data-width="14"></div>
-          </div>
-          <div class="compare-pct" style="color:var(--poptarts)">14%</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--poptarts)" data-width="12"></div></div>
+          <div class="compare-pct" style="color:var(--poptarts)">12%</div>
         </div>
-        <div class="compare-delta down">▼ 13 pts — still leading both cycles</div>
+        <div class="compare-delta down">▼ 15 pts — still leading both cycles</div>
       </div>
     </div>
-
-    <!-- Kalina -->
     <div class="compare-card">
       <div class="compare-header" style="background:var(--rocketpops)">
         <div class="compare-manager">Kalina Velikova</div>
@@ -382,23 +289,17 @@
       <div class="compare-body">
         <div class="compare-row">
           <div class="compare-label">IMS · May</div>
-          <div class="compare-bar-wrap">
-            <div class="compare-bar" style="background:var(--rocketpops);opacity:0.45" data-width="10"></div>
-          </div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--rocketpops);opacity:0.4" data-width="10"></div></div>
           <div class="compare-pct" style="color:var(--rocketpops)">10%</div>
         </div>
         <div class="compare-row">
           <div class="compare-label">EA · June</div>
-          <div class="compare-bar-wrap">
-            <div class="compare-bar" style="background:var(--rocketpops)" data-width="9"></div>
-          </div>
-          <div class="compare-pct" style="color:var(--rocketpops)">9%</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--rocketpops)" data-width="13"></div></div>
+          <div class="compare-pct" style="color:var(--rocketpops)">13%</div>
         </div>
-        <div class="compare-delta neutral">▶ 1 pt — essentially flat across cycles</div>
+        <div class="compare-delta up">▲ 3 pts — most improved pod</div>
       </div>
     </div>
-
-    <!-- Andrea -->
     <div class="compare-card">
       <div class="compare-header" style="background:var(--lolipops)">
         <div class="compare-manager">Andrea Asistido</div>
@@ -407,31 +308,26 @@
       <div class="compare-body">
         <div class="compare-row">
           <div class="compare-label">IMS · May</div>
-          <div class="compare-bar-wrap">
-            <div class="compare-bar" style="background:var(--lolipops);opacity:0.45" data-width="13"></div>
-          </div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--lolipops);opacity:0.4" data-width="13"></div></div>
           <div class="compare-pct" style="color:var(--lolipops)">13%</div>
         </div>
         <div class="compare-row">
           <div class="compare-label">EA · June</div>
-          <div class="compare-bar-wrap">
-            <div class="compare-bar" style="background:var(--lolipops)" data-width="8"></div>
-          </div>
-          <div class="compare-pct" style="color:var(--lolipops)">8%</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--lolipops)" data-width="15"></div></div>
+          <div class="compare-pct" style="color:var(--lolipops)">15%</div>
         </div>
-        <div class="compare-delta down">▼ 5 pts — June still in progress</div>
+        <div class="compare-delta up">▲ 2 pts — leading the team in June</div>
       </div>
     </div>
-
   </div>
 </div>
 
 <div class="footer">
-  TalentPop · Client Spotlight EA Edition · Data: June 6–24, 2026 · Generated June 24, 2026
+  TalentPop · Client Spotlight EA Edition · Data: June 6 – July 6, 2026 · Generated July 6, 2026
 </div>
 
 <script>
-const csms = [{"name": "Sadie Brown", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 9, "yes": 4, "eligible": 9, "noval": 0, "noshow": 0, "rate": 44}, {"name": "Jhon Paulo Talato", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 3, "yes": 1, "eligible": 3, "noval": 2, "noshow": 0, "rate": 33}, {"name": "Asande Mkari", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 7, "yes": 2, "eligible": 7, "noval": 1, "noshow": 0, "rate": 29}, {"name": "David Noller", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 9, "yes": 2, "eligible": 8, "noval": 1, "noshow": 1, "rate": 25}, {"name": "Tia Silver", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 12, "yes": 2, "eligible": 12, "noval": 4, "noshow": 0, "rate": 17}, {"name": "Md Shaidul Islam Shakil", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 7, "yes": 1, "eligible": 7, "noval": 1, "noshow": 0, "rate": 14}, {"name": "Madison LeBlanc", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 15, "yes": 2, "eligible": 15, "noval": 4, "noshow": 0, "rate": 13}, {"name": "Aedan Walch Flores", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 17, "yes": 2, "eligible": 17, "noval": 6, "noshow": 0, "rate": 12}, {"name": "Pam Brown", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 16, "yes": 2, "eligible": 16, "noval": 7, "noshow": 0, "rate": 12}, {"name": "Ceazar Camales", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 9, "yes": 1, "eligible": 9, "noval": 6, "noshow": 0, "rate": 11}, {"name": "Daniel Colohan", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 27, "yes": 3, "eligible": 27, "noval": 6, "noshow": 0, "rate": 11}, {"name": "Ezekiel Grado", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 13, "yes": 1, "eligible": 13, "noval": 2, "noshow": 0, "rate": 8}, {"name": "Ashley Palmer", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 24, "yes": 2, "eligible": 24, "noval": 8, "noshow": 0, "rate": 8}, {"name": "Clinton Greenaway", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 15, "yes": 1, "eligible": 15, "noval": 4, "noshow": 0, "rate": 7}, {"name": "Octavio Lobato", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 20, "yes": 1, "eligible": 20, "noval": 8, "noshow": 0, "rate": 5}, {"name": "Jack Wasserman", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 18, "yes": 0, "eligible": 18, "noval": 6, "noshow": 0, "rate": 0}, {"name": "Mikka Robelle Claveria Tubice", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 5, "yes": 0, "eligible": 5, "noval": 4, "noshow": 0, "rate": 0}, {"name": "Nelly Wema", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 7, "yes": 0, "eligible": 7, "noval": 5, "noshow": 0, "rate": 0}, {"name": "Shelby Bruce", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 9, "yes": 0, "eligible": 9, "noval": 4, "noshow": 0, "rate": 0}, {"name": "Shongile Carol Manganyi", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 12, "yes": 0, "eligible": 12, "noval": 5, "noshow": 0, "rate": 0}, {"name": "Troy Abram", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 6, "yes": 0, "eligible": 6, "noval": 3, "noshow": 0, "rate": 0}, {"name": "Usman Siddique", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 3, "yes": 0, "eligible": 3, "noval": 1, "noshow": 0, "rate": 0}];
+const csms = [{"name": "Sadie Brown", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 9, "yes": 6, "eligible": 9, "noval": 0, "noshow": 0, "rate": 67}, {"name": "Usman Siddique", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 7, "yes": 3, "eligible": 7, "noval": 0, "noshow": 0, "rate": 43}, {"name": "Nelly Wema", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 11, "yes": 4, "eligible": 11, "noval": 1, "noshow": 0, "rate": 36}, {"name": "Jhon Paulo Talato", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 3, "yes": 1, "eligible": 3, "noval": 0, "noshow": 0, "rate": 33}, {"name": "Asande Mkari", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 9, "yes": 2, "eligible": 9, "noval": 0, "noshow": 0, "rate": 22}, {"name": "Jack Wasserman", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 20, "yes": 4, "eligible": 20, "noval": 1, "noshow": 0, "rate": 20}, {"name": "Ezekiel Grado", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 16, "yes": 3, "eligible": 16, "noval": 0, "noshow": 0, "rate": 19}, {"name": "David Noller", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 11, "yes": 2, "eligible": 11, "noval": 0, "noshow": 0, "rate": 18}, {"name": "Pam Brown", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 22, "yes": 4, "eligible": 22, "noval": 3, "noshow": 0, "rate": 18}, {"name": "Md Shaidul Islam Shakil", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 14, "yes": 2, "eligible": 14, "noval": 0, "noshow": 0, "rate": 14}, {"name": "Daniel Colohan", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 33, "yes": 4, "eligible": 33, "noval": 4, "noshow": 0, "rate": 12}, {"name": "Troy Abram", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 9, "yes": 1, "eligible": 9, "noval": 2, "noshow": 0, "rate": 11}, {"name": "Clinton Greenaway", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 21, "yes": 2, "eligible": 21, "noval": 1, "noshow": 0, "rate": 10}, {"name": "Ceazar Camales", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 11, "yes": 1, "eligible": 11, "noval": 1, "noshow": 0, "rate": 9}, {"name": "Octavio Lobato", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 25, "yes": 2, "eligible": 25, "noval": 8, "noshow": 0, "rate": 8}, {"name": "Tia Silver", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 18, "yes": 1, "eligible": 18, "noval": 2, "noshow": 0, "rate": 6}, {"name": "Aedan Walch Flores", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 22, "yes": 1, "eligible": 22, "noval": 5, "noshow": 0, "rate": 5}, {"name": "Ashley Palmer", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 24, "yes": 1, "eligible": 24, "noval": 2, "noshow": 0, "rate": 4}, {"name": "Mikka Robelle Claveria Tubice", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 8, "yes": 0, "eligible": 8, "noval": 3, "noshow": 0, "rate": 0}, {"name": "Shongile Carol Manganyi", "pod": "LoliPops \ud83c\udf61", "color": "#9B59B6", "total": 15, "yes": 0, "eligible": 15, "noval": 5, "noshow": 0, "rate": 0}, {"name": "Madison LeBlanc", "pod": "PopTarts \ud83c\udf6d", "color": "#FF6B9D", "total": 15, "yes": 0, "eligible": 15, "noval": 2, "noshow": 0, "rate": 0}, {"name": "Shelby Bruce", "pod": "RocketPops \ud83d\ude80", "color": "#5B8DEF", "total": 8, "yes": 0, "eligible": 8, "noval": 2, "noshow": 0, "rate": 0}];
 
 function renderTable(filter) {
   const tbody = document.getElementById('csm-tbody');
@@ -451,19 +347,15 @@ function renderTable(filter) {
           <span class="rate-pct" style="color:${c.color};min-width:38px">${c.rate}%</span>
         </div>
       </td>
-      <td>${c.noval > 0 ? `<span class="unlogged-badge">${c.noval} unlogged</span>` : '<span style="color:#aaa;font-size:13px">—</span>'}</td>
+      <td>${c.noval > 0 ? '<span class="unlogged-badge">'+c.noval+' unlogged</span>' : '<span style="color:#aaa;font-size:13px">—</span>'}</td>
     `;
     tbody.appendChild(tr);
   });
-  // Animate bars
   requestAnimationFrame(() => {
-    document.querySelectorAll('.bar-inner[data-width]').forEach(el => {
-      el.style.width = el.dataset.width + '%';
-    });
+    document.querySelectorAll('.bar-inner[data-width]').forEach(el => { el.style.width = el.dataset.width + '%'; });
   });
 }
 
-// Filter buttons
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -472,21 +364,14 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// Pod bar animations on load
-function animatePodBars() {
-  document.querySelectorAll('.pod-bar[data-width]').forEach(el => {
-    el.style.width = el.dataset.width + '%';
-  });
-}
-
-function animateCompareBars() {
-  document.querySelectorAll('.compare-bar[data-width]').forEach(el => {
+function animateAllBars() {
+  document.querySelectorAll('.pod-bar[data-width], .compare-bar[data-width]').forEach(el => {
     el.style.width = el.dataset.width + '%';
   });
 }
 
 renderTable('all');
-setTimeout(() => { animatePodBars(); animateCompareBars(); }, 300);
+setTimeout(animateAllBars, 300);
 </script>
 </body>
 </html>
