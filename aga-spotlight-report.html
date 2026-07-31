@@ -6,9 +6,7 @@
 <title>Client Spotlight — AGA Edition | July 2026</title>
 <style>
   :root {
-    --poptarts: #FF6B9D;
-    --rocketpops: #5B8DEF;
-    --lolipops: #9B59B6;
+    --poptarts: #FF6B9D; --rocketpops: #5B8DEF; --lolipops: #9B59B6;
     --gold: #F5C518; --silver: #A8B2C1; --bronze: #CD7F32;
     --dark: #1A1A2E; --mid: #2E3250;
     --text: #333; --subtext: #666; --bg: #F7F8FC; --card: #FFFFFF; --radius: 14px;
@@ -41,7 +39,6 @@
   .section-title { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
   .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(to right, rgba(0,0,0,0.08), transparent); }
 
-  /* PODIUM */
   .podium-wrap { display: flex; justify-content: center; align-items: flex-end; gap: 16px; padding: 24px 0 40px; flex-wrap: wrap; }
   .podium-card { text-align: center; border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
   .podium-card.p1 { width: 220px; animation-delay: 0.2s; }
@@ -58,7 +55,6 @@
   .p1 .podium-base { background: var(--gold); } .p2 .podium-base { background: var(--silver); } .p3 .podium-base { background: var(--bronze); }
   .p1 .podium-rate { color: #D4A800; } .p2 .podium-rate { color: var(--silver); } .p3 .podium-rate { color: var(--bronze); }
 
-  /* POD CARDS */
   .pod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; margin-bottom: 48px; }
   .pod-card { background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; animation: fadeUp 0.5s ease both; }
   .pod-header { padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; }
@@ -74,7 +70,6 @@
   .pod-meta-item { font-size: 13px; color: var(--subtext); }
   .pod-meta-item strong { color: var(--text); font-weight: 600; }
 
-  /* TABLE */
   .table-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
   .filter-btn { padding: 7px 16px; border-radius: 99px; border: 2px solid transparent; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; background: #eee; color: var(--subtext); }
   .filter-btn[data-pod="all"].active { background: var(--dark); border-color: var(--dark); color: white; }
@@ -94,8 +89,12 @@
   .rate-pct { font-weight: 700; font-size: 15px; }
   .unlogged-badge { display: inline-block; background: #FFF3E0; color: #E65100; border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
 
-  /* CYCLE COMPARISON */
-  .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap: 20px; margin-bottom: 48px; }
+  .cycles-table-wrap { background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; margin-bottom: 48px; }
+  .cycles-table-wrap thead th { background: #2C3E50; }
+  .cycle-badge { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; color: white; }
+  .cycle-ims { background: #E67E22; } .cycle-ea { background: #8E44AD; } .cycle-aga { background: #27AE60; }
+
+  .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap: 20px; margin-bottom: 64px; }
   .compare-card { background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; animation: fadeUp 0.5s ease both; }
   .compare-header { padding: 16px 20px; }
   .compare-manager { font-size: 16px; font-weight: 700; color: white; }
@@ -111,14 +110,6 @@
   .compare-delta.up { background: #E8F5E9; color: #2E7D32; }
   .compare-delta.neutral { background: #F3F4F6; color: #555; }
 
-  /* ALL-CYCLES SUMMARY TABLE */
-  .cycles-table-wrap { background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; margin-bottom: 64px; }
-  .cycles-table-wrap table thead th { background: #2C3E50; }
-  .cycle-badge { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; color: white; }
-  .cycle-ims { background: #E67E22; }
-  .cycle-ea { background: #8E44AD; }
-  .cycle-aga { background: #27AE60; }
-
   .footer { background: var(--mid); color: rgba(255,255,255,0.4); text-align: center; padding: 28px; font-size: 13px; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
@@ -126,23 +117,20 @@
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <p class="hero-eyebrow">TalentPop · Advertising Growth Agent (AGA) · July 2–31, 2026</p>
   <h1>Client Spotlight<br><span>Mention Report</span></h1>
   <p class="hero-sub">How often are CSMs mentioning the Client Spotlight to their clients on check-in calls?</p>
 </div>
 
-<!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item" style="animation-delay:0.0s"><div class="stat-num">10%</div><div class="stat-label">Team Mention Rate</div></div>
-  <div class="stat-item" style="animation-delay:0.1s"><div class="stat-num">36</div><div class="stat-label">Total Mentions</div></div>
-  <div class="stat-item" style="animation-delay:0.2s"><div class="stat-num">351</div><div class="stat-label">Eligible Calls</div></div>
+  <div class="stat-item" style="animation-delay:0.0s"><div class="stat-num">11%</div><div class="stat-label">Team Mention Rate</div></div>
+  <div class="stat-item" style="animation-delay:0.1s"><div class="stat-num">37</div><div class="stat-label">Total Mentions</div></div>
+  <div class="stat-item" style="animation-delay:0.2s"><div class="stat-num">352</div><div class="stat-label">Eligible Calls</div></div>
   <div class="stat-item" style="animation-delay:0.3s"><div class="stat-num">93</div><div class="stat-label">Unlogged (No Value)</div></div>
-  <div class="stat-item" style="animation-delay:0.4s"><div class="stat-num">22</div><div class="stat-label">CSMs Tracked</div></div>
+  <div class="stat-item" style="animation-delay:0.4s"><div class="stat-num">23</div><div class="stat-label">CSMs Tracked</div></div>
 </div>
 
-<!-- PODIUM -->
 <div class="section">
   <div class="section-title">🏆 Top Performers — AGA July</div>
   <div class="podium-wrap">
@@ -179,7 +167,6 @@
   </div>
 </div>
 
-<!-- POD BREAKDOWN -->
 <div class="section">
   <div class="section-title">📊 Pod Breakdown — AGA July</div>
   <div class="pod-grid">
@@ -204,13 +191,13 @@
         <div class="pod-header-left"><div class="pod-dot"></div>
           <div><div class="pod-name">RocketPops 🚀</div><div class="pod-manager">Kalina Velikova</div></div>
         </div>
-        <div class="pod-rate-badge">8%</div>
+        <div class="pod-rate-badge">9%</div>
       </div>
       <div class="pod-body">
-        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--rocketpops)" data-width="8"></div></div>
+        <div class="pod-bar-wrap"><div class="pod-bar" style="background:var(--rocketpops)" data-width="9"></div></div>
         <div class="pod-meta">
-          <div class="pod-meta-item"><strong>9</strong> mentions</div>
-          <div class="pod-meta-item"><strong>106</strong> eligible calls</div>
+          <div class="pod-meta-item"><strong>10</strong> mentions</div>
+          <div class="pod-meta-item"><strong>107</strong> eligible calls</div>
           <div class="pod-meta-item"><strong>26</strong> unlogged</div>
         </div>
       </div>
@@ -234,7 +221,6 @@
   </div>
 </div>
 
-<!-- FULL CSM TABLE -->
 <div class="section">
   <div class="section-title">📋 Full CSM Breakdown — AGA July</div>
   <div class="table-controls">
@@ -251,15 +237,12 @@
   </div>
 </div>
 
-<!-- ALL-CYCLES SUMMARY -->
 <div class="section">
   <div class="section-title">📅 All Cycles at a Glance</div>
   <div class="cycles-table-wrap">
     <table>
       <thead>
-        <tr>
-          <th>Cycle</th><th>Period</th><th>Mentions</th><th>Eligible Calls</th><th>Team Rate</th><th>Unlogged Rate</th>
-        </tr>
+        <tr><th>Cycle</th><th>Period</th><th>Mentions</th><th>Eligible Calls</th><th>Team Rate</th><th>Unlogged Rate</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -272,28 +255,26 @@
         <tr style="background:#F9F6FF">
           <td><span class="cycle-badge cycle-ea">EA</span></td>
           <td>June 6 – July 6, 2026</td>
-          <td>17</td><td>129</td>
+          <td>44</td><td>331</td>
           <td><strong style="color:#8E44AD">13%</strong></td>
-          <td style="color:#2E7D32">22.5%</td>
+          <td style="color:#2E7D32">12.7%</td>
         </tr>
         <tr>
           <td><span class="cycle-badge cycle-aga">AGA</span></td>
           <td>July 2–31, 2026</td>
-          <td>36</td><td>351</td>
-          <td><strong style="color:#27AE60">10%</strong></td>
-          <td style="color:#BF6000">26.5%</td>
+          <td>37</td><td>352</td>
+          <td><strong style="color:#27AE60">11%</strong></td>
+          <td style="color:#BF6000">26.4%</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- POD COMPARISON ACROSS ALL CYCLES -->
-<div class="section" style="padding-bottom:64px">
+<div class="section">
   <div class="section-title">📈 Pod Comparison — All Three Cycles</div>
-  <p style="color:var(--subtext);font-size:14px;margin-bottom:28px;max-width:680px">Mention rates by pod across IMS (May), EA (June), and AGA (July). Note: IMS May had a ~55% unlogged rate which inflates that figure; EA and AGA rates reflect more complete data.</p>
+  <p style="color:var(--subtext);font-size:14px;margin-bottom:28px;max-width:680px">Mention rates by pod across IMS (May), EA (June 6 – July 6), and AGA (July 2–31). Note: IMS May had a ~55% unlogged rate which inflates that figure; EA and AGA rates reflect more complete data.</p>
   <div class="compare-grid">
-
     <div class="compare-card">
       <div class="compare-header" style="background:var(--poptarts)">
         <div class="compare-manager">Vitzania Estrada</div>
@@ -315,10 +296,9 @@
           <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--poptarts)" data-width="12"></div></div>
           <div class="compare-pct" style="color:var(--poptarts)">12%</div>
         </div>
-        <div class="compare-delta neutral">▶ 2 pts vs June — leading the team all 3 cycles</div>
+        <div class="compare-delta down">▼ 2 pts vs June — leading the team all 3 cycles</div>
       </div>
     </div>
-
     <div class="compare-card">
       <div class="compare-header" style="background:var(--rocketpops)">
         <div class="compare-manager">Kalina Velikova</div>
@@ -337,13 +317,12 @@
         </div>
         <div class="compare-row">
           <div class="compare-label">AGA · July</div>
-          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--rocketpops)" data-width="8"></div></div>
-          <div class="compare-pct" style="color:var(--rocketpops)">8%</div>
+          <div class="compare-bar-wrap"><div class="compare-bar" style="background:var(--rocketpops)" data-width="9"></div></div>
+          <div class="compare-pct" style="color:var(--rocketpops)">9%</div>
         </div>
-        <div class="compare-delta down">▼ 3 pts vs June — dipped in July</div>
+        <div class="compare-delta down">▼ 2 pts vs June — dipped in July</div>
       </div>
     </div>
-
     <div class="compare-card">
       <div class="compare-header" style="background:var(--lolipops)">
         <div class="compare-manager">Andrea Asistido</div>
@@ -368,7 +347,6 @@
         <div class="compare-delta down">▼ 4 pts vs June — Nelly & Jhon Paulo carrying the pod</div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -381,16 +359,17 @@ const csms = [
   {"name":"Sadie Brown","pod":"PopTarts 🍭","color":"#FF6B9D","yes":6,"eligible":16,"noval":3,"rate":38},
   {"name":"Nelly Wema","pod":"LoliPops 🍡","color":"#9B59B6","yes":3,"eligible":10,"noval":2,"rate":30},
   {"name":"Jhon Paulo Talato","pod":"LoliPops 🍡","color":"#9B59B6","yes":2,"eligible":8,"noval":2,"rate":25},
+  {"name":"Dominic Tabulao","pod":"LoliPops 🍡","color":"#9B59B6","yes":1,"eligible":1,"noval":0,"rate":100},
   {"name":"Jack Wasserman","pod":"RocketPops 🚀","color":"#5B8DEF","yes":3,"eligible":18,"noval":0,"rate":17},
   {"name":"Usman Siddique","pod":"LoliPops 🍡","color":"#9B59B6","yes":2,"eligible":12,"noval":6,"rate":17},
   {"name":"Clinton Greenaway","pod":"PopTarts 🍭","color":"#FF6B9D","yes":3,"eligible":21,"noval":2,"rate":14},
   {"name":"Pam Brown","pod":"PopTarts 🍭","color":"#FF6B9D","yes":2,"eligible":15,"noval":3,"rate":13},
   {"name":"Md Shaidul Islam Shakil","pod":"LoliPops 🍡","color":"#9B59B6","yes":2,"eligible":18,"noval":5,"rate":11},
-  {"name":"Madison LeBlanc","pod":"PopTarts 🍭","color":"#FF6B9D","yes":2,"eligible":18,"noval":4,"rate":11},
   {"name":"Tia Silver","pod":"RocketPops 🚀","color":"#5B8DEF","yes":2,"eligible":19,"noval":4,"rate":11},
+  {"name":"Madison LeBlanc","pod":"PopTarts 🍭","color":"#FF6B9D","yes":2,"eligible":18,"noval":4,"rate":11},
   {"name":"Octavio Lobato","pod":"PopTarts 🍭","color":"#FF6B9D","yes":3,"eligible":33,"noval":10,"rate":9},
-  {"name":"Asande Mkari","pod":"LoliPops 🍡","color":"#9B59B6","yes":1,"eligible":12,"noval":3,"rate":8},
   {"name":"Daniel Colohan","pod":"RocketPops 🚀","color":"#5B8DEF","yes":3,"eligible":38,"noval":13,"rate":8},
+  {"name":"Asande Mkari","pod":"LoliPops 🍡","color":"#9B59B6","yes":1,"eligible":12,"noval":3,"rate":8},
   {"name":"Troy Abram","pod":"RocketPops 🚀","color":"#5B8DEF","yes":1,"eligible":13,"noval":4,"rate":8},
   {"name":"Aedan Walch Flores","pod":"PopTarts 🍭","color":"#FF6B9D","yes":1,"eligible":22,"noval":6,"rate":5},
   {"name":"Shongile Carol Manganyi","pod":"LoliPops 🍡","color":"#9B59B6","yes":0,"eligible":20,"noval":8,"rate":0},
@@ -402,21 +381,25 @@ const csms = [
   {"name":"Ezekiel Grado","pod":"RocketPops 🚀","color":"#5B8DEF","yes":0,"eligible":1,"noval":0,"rate":0}
 ];
 
+// Sort: by rate desc, but pin Dominic note since 1 call
+const sorted = [...csms].sort((a,b) => b.rate - a.rate);
+
 function renderTable(filter) {
   const tbody = document.getElementById('csm-tbody');
   tbody.innerHTML = '';
-  csms.forEach((c, i) => {
+  sorted.forEach((c, i) => {
     if (filter !== 'all' && c.pod !== filter) return;
     const tr = document.createElement('tr');
     tr.style.animationDelay = (i * 0.03) + 's';
+    const noteFlag = c.name === 'Dominic Tabulao' ? ' <span style="font-size:10px;color:#aaa">(1 call)</span>' : '';
     tr.innerHTML = `
-      <td class="csm-name">${c.name}</td>
+      <td class="csm-name">${c.name}${noteFlag}</td>
       <td><span class="pod-tag" style="background:${c.color}">${c.pod}</span></td>
       <td>${c.yes}</td>
       <td>${c.eligible}</td>
       <td>
         <div style="display:flex;align-items:center;gap:10px">
-          <div class="bar-outer" style="flex:1"><div class="bar-inner" style="background:${c.color}" data-width="${c.rate}"></div></div>
+          <div class="bar-outer" style="flex:1"><div class="bar-inner" style="background:${c.color}" data-width="${Math.min(c.rate,100)}"></div></div>
           <span class="rate-pct" style="color:${c.color};min-width:38px">${c.rate}%</span>
         </div>
       </td>
@@ -425,7 +408,7 @@ function renderTable(filter) {
     tbody.appendChild(tr);
   });
   requestAnimationFrame(() => {
-    document.querySelectorAll('.bar-inner[data-width]').forEach(el => { el.style.width = el.dataset.width + '%'; });
+    document.querySelectorAll('.bar-inner[data-width]').forEach(el => { el.style.width = Math.min(el.dataset.width, 100) + '%'; });
   });
 }
 
